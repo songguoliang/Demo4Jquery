@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>input剩余长度提示</title>
+<link href="/js/alert/css/ui-dialog.css" rel="stylesheet">
+<script src="/js/jquery-1.7.1.js" type="text/javascript"></script>
+<script src="/js/alert/dialog.js" type="text/javascript"></script>
+<script src="/js/common.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+	$("#input").keyup(function(){
+		Dol.wordLenCheck(this,'#show',10);
+	});
+	Dol.wordLenCheck("#input",'#show',10);
+});
+
+</script>
+</head>
+<body>
+	<div style="padding: 50px;">
+		<input id="input" type="text" value="aa">
+		<span>还能输入<font color="red" id="show"></font>字</span>
+	</div>
+</body>
+</html>

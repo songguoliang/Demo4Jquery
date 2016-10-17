@@ -1,0 +1,449 @@
+/*!
+ * ui-dialog.css
+ * Date: 2014-07-03
+ * https://github.com/aui/artDialog
+ * (c) 2009-2014 TangBin, http://www.planeArt.cn
+ *
+ * This is licensed under the GNU LGPL, version 2.1 or later.
+ * For details, see: http://www.gnu.org/licenses/lgpl-2.1.html
+ */
+.ui-alert {
+    *zoom:1;
+    _float: left;
+    position: relative;
+    background-color: #FFF;
+    border: 1px solid #999;
+    border-radius: 6px;
+    outline: 0;
+    background-clip: padding-box;
+    font-family: Helvetica, arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #666;
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: -webkit-transform .15s ease-in-out, opacity .15s ease-in-out;
+    transition: transform .15s ease-in-out, opacity .15s ease-in-out;
+}
+.ui-popup-show .ui-alert {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.ui-popup-focus .ui-alert {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+.ui-popup-modal .ui-alert {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1), 0 0 256px rgba(255, 255, 255, .3);
+    border: 4px solid #666;
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 0;
+}
+.ui-alert-grid {
+    width: auto;
+    margin: 0;
+    border: 0 none;
+    border-collapse:collapse;
+    border-spacing: 0;
+    background: transparent;
+}
+.ui-alert-header,
+.ui-alert-body,
+.ui-alert-footer {
+    padding: 0;
+    border: 0 none;
+    text-align: left;
+    background: transparent;
+}
+.ui-alert-header {
+    white-space: nowrap;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+.ui-alert-close {
+    background: url("/js/alert/css/icons/thickbox_close.png") no-repeat scroll 0 0;
+    background: url("/js/alert/css/icons/thickbox_close.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+    font-size: 0;
+    height: 21px;
+    line-height: 100px;
+    overflow: hidden;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    width: 21px;
+}
+.ui-alert-close:hover,
+.ui-alert-close:focus {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+    outline: 0;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+.ui-alert-title {
+	background: none repeat scroll 0 0 #f5f5f5;
+    border: 0 none;
+    color: #333;
+    font-family: arial,"宋体";
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 5px;
+    height: 31px;
+    line-height: 31px;
+    padding: 0 10px;
+}
+.ui-alert-body {
+    padding: 20px 10px;
+    text-align: center;
+}
+.ui-alert-content {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    *zoom: 1;
+    *display: inline;
+    text-align: left;
+}
+.ui-alert-footer {
+    padding: 6px 20px;
+	text-align: center;
+	background-color: #f5f5f5;
+    border-radius: 5px;
+}
+.ui-alert-statusbar {
+    float: left;
+    margin-right: 20px;
+    padding: 6px 0;
+    line-height: 1.428571429;
+    font-size: 14px;
+    color: #888;
+    white-space: nowrap;
+}
+.ui-alert-statusbar label:hover {
+    color: #333;
+}
+.ui-alert-statusbar input,
+.ui-alert-statusbar .label {
+    vertical-align: middle;
+}
+.ui-alert-button {
+    white-space: nowrap;
+}
+.ui-alert-footer button+button {
+    margin-bottom: 0;
+    margin-left: 15px;
+}
+.ui-alert-footer button {
+    width:auto;
+    overflow:visible;
+    display: inline-block;
+    padding: 3px 12px;
+    _margin-left: 5px;
+    margin-bottom: 0;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+       -o-user-select: none;
+          user-select: none;
+}
+
+.ui-alert-footer button:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+.ui-alert-footer button:hover,
+.ui-alert-footer button:focus {
+  background-color: #f4f4f4;
+}
+
+.ui-alert-footer button:active {
+  background-color: #f4f4f4;
+}
+.ui-alert-footer button[disabled] {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.ui-alert-footer button {
+  background-color: #f4f4f4;
+  border: 1px solid #c7c7c7;
+  color: #666;
+}
+
+.red:hover {
+    
+}
+
+.ui-alert-footer button:hover,
+.ui-alert-footer button:focus,
+.ui-alert-footer button:active {
+  background-color: #f4f4f4;
+}
+
+.ui-alert-footer button:active{
+  background-image: none;
+}
+
+.ui-alert-footer button[disabled],
+.ui-alert-footer button[disabled]:hover,
+.ui-alert-footer button[disabled]:focus,
+.ui-alert-footer button[disabled]:active {
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+
+.ui-alert-footer button.ui-alert-autofocus {
+  color: #666;
+  border-color: #c7c7c7;
+}
+
+.ui-alert-footer button.ui-alert-autofocus:hover,
+.ui-alert-footer button.ui-alert-autofocus:focus,
+.ui-alert-footer button.ui-alert-autofocus:active {
+  background-color: #f4f4f4;
+}
+
+.ui-alert-footer button.ui-alert-autofocus:active {
+  background-image: none;
+}
+.ui-popup-top-left .ui-alert,
+.ui-popup-top .ui-alert,
+.ui-popup-top-right .ui-alert {
+    top: -8px;
+}
+.ui-popup-bottom-left .ui-alert,
+.ui-popup-bottom .ui-alert,
+.ui-popup-bottom-right .ui-alert {
+    top: 8px;
+}
+.ui-popup-left-top .ui-alert,
+.ui-popup-left .ui-alert,
+.ui-popup-left-bottom .ui-alert {
+    left: -8px;
+}
+.ui-popup-right-top .ui-alert,
+.ui-popup-right .ui-alert,
+.ui-popup-right-bottom .ui-alert {
+    left: 8px;
+}
+
+.ui-alert-arrow-a,
+.ui-alert-arrow-b {
+    position: fixed;
+    display: none;
+    width: 0;
+    height: 0;
+    overflow:hidden;
+    _color:#FF3FFF;
+    _filter:chroma(color=#FF3FFF);
+    border:8px dashed transparent;
+}
+.ui-popup-follow .ui-alert-arrow-a,
+.ui-popup-follow .ui-alert-arrow-b{
+    display: block;
+}
+.ui-popup-top-left .ui-alert-arrow-a,
+.ui-popup-top .ui-alert-arrow-a,
+.ui-popup-top-right .ui-alert-arrow-a {
+    bottom: -16px;
+    border-top:8px solid #7C7C7C;
+}
+.ui-popup-top-left .ui-alert-arrow-b,
+.ui-popup-top .ui-alert-arrow-b,
+.ui-popup-top-right .ui-alert-arrow-b {
+    bottom: -15px;
+    border-top:8px solid #fff;
+}
+.ui-popup-top-left .ui-alert-arrow-a,
+.ui-popup-top-left .ui-alert-arrow-b  {
+    left: 15px;
+}
+.ui-popup-top .ui-alert-arrow-a,
+.ui-popup-top .ui-alert-arrow-b  {
+    left: 50%;
+    margin-left: -8px;
+}
+.ui-popup-top-right .ui-alert-arrow-a,
+.ui-popup-top-right .ui-alert-arrow-b {
+    right: 15px;
+}
+.ui-popup-bottom-left .ui-alert-arrow-a,
+.ui-popup-bottom .ui-alert-arrow-a,
+.ui-popup-bottom-right .ui-alert-arrow-a {
+    top: -16px;
+    border-bottom:8px solid #7C7C7C;
+}
+.ui-popup-bottom-left .ui-alert-arrow-b,
+.ui-popup-bottom .ui-alert-arrow-b,
+.ui-popup-bottom-right .ui-alert-arrow-b {
+    top: -15px;
+    border-bottom:8px solid #fff;
+}
+.ui-popup-bottom-left .ui-alert-arrow-a,
+.ui-popup-bottom-left .ui-alert-arrow-b {
+    left: 15px;
+}
+.ui-popup-bottom .ui-alert-arrow-a,
+.ui-popup-bottom .ui-alert-arrow-b {
+    margin-left: -8px;
+    left: 50%;
+}
+.ui-popup-bottom-right .ui-alert-arrow-a,
+.ui-popup-bottom-right .ui-alert-arrow-b {
+    right: 15px;
+}
+.ui-popup-left-top .ui-alert-arrow-a,
+.ui-popup-left .ui-alert-arrow-a,
+.ui-popup-left-bottom .ui-alert-arrow-a {
+    right: -16px;
+    border-left:8px solid #7C7C7C;
+}
+.ui-popup-left-top .ui-alert-arrow-b,
+.ui-popup-left .ui-alert-arrow-b,
+.ui-popup-left-bottom .ui-alert-arrow-b {
+    right: -15px;
+    border-left:8px solid #fff;
+}
+.ui-popup-left-top .ui-alert-arrow-a,
+.ui-popup-left-top .ui-alert-arrow-b {
+    top: 15px;
+}
+.ui-popup-left .ui-alert-arrow-a,
+.ui-popup-left .ui-alert-arrow-b {
+    margin-top: -8px;
+    top: 50%;
+}
+.ui-popup-left-bottom .ui-alert-arrow-a,
+.ui-popup-left-bottom .ui-alert-arrow-b {
+    bottom: 15px;
+}
+.ui-popup-right-top .ui-alert-arrow-a,
+.ui-popup-right .ui-alert-arrow-a,
+.ui-popup-right-bottom .ui-alert-arrow-a {
+    left: -16px;
+    border-right:8px solid #7C7C7C;
+}
+.ui-popup-right-top .ui-alert-arrow-b,
+.ui-popup-right .ui-alert-arrow-b,
+.ui-popup-right-bottom .ui-alert-arrow-b {
+    left: -15px;
+    border-right:8px solid #fff;
+}
+.ui-popup-right-top .ui-alert-arrow-a,
+.ui-popup-right-top .ui-alert-arrow-b {
+    top: 15px;
+}
+.ui-popup-right .ui-alert-arrow-a,
+.ui-popup-right .ui-alert-arrow-b {
+    margin-top: -8px;
+    top: 50%;
+}
+.ui-popup-right-bottom .ui-alert-arrow-a,
+.ui-popup-right-bottom .ui-alert-arrow-b {
+    bottom: 15px;
+}
+
+
+@-webkit-keyframes ui-alert-loading {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes ui-alert-loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.ui-alert-loading {
+    vertical-align: middle;
+    position: relative;
+    display: block;
+    *zoom: 1;
+    *display: inline;
+    overflow: hidden;
+    width: 32px;
+    height: 32px;
+    top: 50%;
+    margin: -16px auto 0 auto;
+    font-size: 0;
+    text-indent: -999em;
+    color: #666;
+}
+.ui-alert-loading {
+    width: 100%\9;
+    text-indent: 0\9;
+    line-height: 32px\9;
+    text-align: center\9;
+    font-size: 12px\9;
+}
+
+.ui-alert-loading::after {
+    position: absolute;
+    content: '';
+    width: 3px;
+    height: 3px;
+    margin: 14.5px 0 0 14.5px;
+    border-radius: 100%;
+    box-shadow: 0 -10px 0 1px #ccc, 10px 0px #ccc, 0 10px #ccc, -10px 0 #ccc, -7px -7px 0 0.5px #ccc, 7px -7px 0 1.5px #ccc, 7px 7px #ccc, -7px 7px #ccc;
+    -webkit-transform: rotate(360deg);
+    -webkit-animation: ui-alert-loading 1.5s infinite linear;
+    transform: rotate(360deg);
+    animation: ui-alert-loading 1.5s infinite linear;
+    display: none\9;
+}
+.ui-alert-icon{
+	height: 32px;
+    margin-left: 20px;
+    margin-top:17px; 
+    width: 32px;
+    background: url("icons/icon-msg.png") repeat scroll 0 0;
+    background: url("icons/icon-msg.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.ui-alert-icon-error{
+	background: url("icons/error1.png") repeat scroll 0 0;
+	background: url("icons/error1.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.ui-alert-icon-warning{
+	
+}
+.ui-alert-icon-question{
+	background-position: -32px;
+}
+.ui-alert-icon-success{
+	background-position: -64px;
+}
+.ui-alert-bg-modal{
+	background: url("ui-bg_diagonals-thick_20_666666_40x40.png") repeat scroll 50% 50% #666666 !important;
+}

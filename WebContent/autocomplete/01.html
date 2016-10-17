@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>下拉框级联</title>
+<link href="/js/ui-lightness/jquery-ui-1.10.4.css" rel="stylesheet">
+<script src="/js/jquery-1.7.1.js" type="text/javascript"></script>
+<script src="/js/jquery-ui-1.10.4.js" type="text/javascript"></script>
+<style type="text/css">
+select{
+	width: 200px;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+	$("input").autocomplete({
+		source:"/auto.do",
+		minLength: 2
+	});
+	
+});
+
+</script>
+</head>
+<body>
+	<input type="text">
+</body>
+</html>

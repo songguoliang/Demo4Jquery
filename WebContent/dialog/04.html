@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Insert title here</title>
+<link href="/js/alert/css/ui-dialog.css" rel="stylesheet">
+<script src="/js/jquery-1.7.1.js" type="text/javascript"></script>
+<script src="/js/alert/dialog.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+	$("#button").click(function(){
+		var d = dialog({
+			title: '消息',
+			content: '第一个对话框',
+			okValue: '确 定',
+			ok: function () {
+				dialog({
+					title:'提示2',
+					content:'hello world',
+					button:[{
+						value: '打开',
+						autofocus: true,
+						callback: function () {
+							dialog({
+								content:'第三个提示框',
+								title:'提示'
+							}).showModal();
+						}
+					}]
+				}).show();
+				return false;
+			},
+			cancelValue: '取消',
+			cancel: function () {}
+		});
+
+		d.showModal();
+	});
+	
+	
+});
+
+</script>
+</head>
+<body>
+	<input type="button" id="button" value="多个对话框">
+</body>
+</html>

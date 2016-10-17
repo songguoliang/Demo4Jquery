@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>金额格式化</title>
+<link href="/js/alert/css/ui-dialog.css" rel="stylesheet">
+<script src="/js/jquery-1.7.1.js" type="text/javascript"></script>
+<script src="/js/alert/dialog.js" type="text/javascript"></script>
+<script src="/js/common.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+	$("#input").blur(function(){
+		$("#span1").text(Dol.formatMoney($(this).val()));
+		$("#span2").text(Dol.formatMoney($(this).val(),1));
+		$("#span3").text(Dol.formatMoney($(this).val(),2,0.01));
+		$("#span4").text(Dol.formatMoney($(this).val(),2,100));
+	}).blur();
+	
+	$("#un_input").blur(function(){
+		$("#un_span1").text(Dol.unformatMoney($(this).val()));
+		$("#un_span2").text(Dol.unformatMoney($(this).val(),1));
+		$("#un_span3").text(Dol.unformatMoney($(this).val(),2,0.01));
+		$("#un_span4").text(Dol.unformatMoney($(this).val(),2,100));
+	}).blur();
+});
+
+</script>
+</head>
+<body>
+	<div style="padding: 50px;">
+		逗号格式化金额：<input id="input" type="text" value="123"><br/><br/>
+		只指定数字：<span id="span1"></span><br/>
+		指定数字和小数位：<span id="span2"></span><br/>
+		缩小100倍：<span id="span3"></span><br/>
+		扩大100倍：<span id="span4"></span><br/>
+	</div>
+	<div style="padding: 50px;">
+		取消逗号格式化：<input id="un_input" type="text" value="12,123.23"><br/><br/>
+		只指定数字：<span id="un_span1"></span><br/>
+		指定数字和小数位：<span id="un_span2"></span><br/>
+		缩小100倍：<span id="un_span3"></span><br/>
+		扩大100倍：<span id="un_span4"></span><br/>
+	</div>
+</body>
+</html>

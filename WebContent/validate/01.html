@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>表单验证</title>
+<script src="/js/jquery-1.7.1.js" type="text/javascript"></script>
+<script src="/js/jquery.validate.js" type="text/javascript"></script>
+<style type="text/css">
+input.validate-error { border: 1px dotted red; }
+label.validate-error {
+	color: red;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+	jQuery.validator.addMethod("mobile", function(value, element) {
+		return this.optional(element)||(/^1\d{10}$/.test($.trim(value)));
+	},"请填写正确的手机号码");
+	//表单验证
+   $("#myForm").validate({
+	   errorClass:'validate-error',
+	   onfocusout:function(element){//失去焦点时校验
+			$(element).valid();
+	   },
+	   errorElement:"label",//用什么标签标记错误，默认是 label
+	   errorPlacement : function (error, element) {
+			error.appendTo(element.parents("td"));   
+	   },
+	   rules:{//校验规则
+		   'input1':{
+			   required:true,//必输字段
+		   },
+		   'input2':{
+			   required:true,
+			   number:true//数字(小数、整数、负数)
+		   },
+		   'input3':{
+			   required:true,
+			   digits:true//正整数
+		   },
+		   'input5':{
+			   equalTo:'#input4'
+		   },
+		   'input6':{
+			   maxlength:5
+		   },
+		   'input7':{
+			   minlength:10
+		   },
+		   'input8':{
+			   rangelength:[5,10]
+		   },
+		   'input9':{
+			   min:5
+		   },
+		   'input10':{
+			   max:5
+		   },
+		   'input11':{
+			   mobile:true
+		   },
+		   'input12':{
+				required : true,
+				remote : {
+					url : "/remote.do",  
+					type : 'post',
+					dataType : 'json',
+					data : {
+						'name' : function(){
+							return $("#input12").val();
+						},
+						'other':'other value'
+					}
+				}
+			},
+			'input13':{
+				required:true
+			},
+			'input14':{
+			   required:true,
+			   maxlength:2
+		    },
+			'input15':{
+				required:true
+			}
+	   },
+	   messages:{//错误信息
+		   'input1':{
+			   required:"不能为空"
+		   },
+		   'input2':{
+			   required:"不能为空",
+			   number:'必须输入合法的数字(负数，小数)'
+		   },
+		   'input3':{
+			   required:"不能为空",
+			   digits:'必须输入正整数'
+		   },
+		   'input5':{
+			   equalTo:'两次密码不一致'
+		   },
+		   'input6':{
+			   maxlength:'最大长度{0}'
+		   },
+		   'input7':{
+			   minlength:'最小长度{0}'
+		   },
+		   'input8':{
+			   rangelength:'最小长度{0}，最大长度{1}'
+		   },
+		   'input9':{
+			   min:'最小值为{0}'
+		   },
+		   'input10':{
+			   max:'最大值为{0}'
+		   },
+		   'input12':{
+			   remote:'用户名不正确',
+			   required:'必输'
+		   },
+		   'input13':{
+			   required:'必选'
+		   },
+		   'input14':{
+			   required:'必选',
+			   maxlength:'最多选{0}个'
+		   },
+		   'input15':{
+			   required:'必选'
+		   }
+	   }
+   });
+});
+
+</script>
+</head>
+<body>
+	<div>
+		<form id="myForm" action="http://www.baidu.com" method="post">
+			<table style="width:900px;">
+				<tr>
+					<td width="100" style="text-align: right;">必输文本:</td>
+					<td><input type="text" name="input1"></td>
+				</tr>
+				<tr>
+					<td style="text-align: right;">数字:</td>
+					<td><input type="text" name="input2"></td>
+				</tr>
+				<tr>
+					<td style="text-align: right;">正整数:</td>
+					<td><input type="text" name="input3"></td>
+				</tr>
+				<tr>
+					<td style="text-align: right;">密码:</td>
+					<td><input type="text" id="input4" name="input4"></td>
+				</tr>
+				<tr>
+					<td style="text-align: right;">重复密码:</td>
+					<td><input type="text" name="input5"></td>
+				</tr>
+				<tr>
+					<td style="text-align: right;">最大长度:</td>
+					<td><input type="text" name="input6" value="123456"></td>
+				</tr>
+				<tr>
+					<td style="text-align: right;">最小长度:</td>
+					<td><input type="text" name="input7" value="1"></td>
+				</tr>
+				<tr>
+					<td style="text-align: right;">长度范围:</td>
+					<td><input type="text" name="input8" value="1"></td>
+				</tr>
+				<tr>
+					<td style="text-align: right;">最小值:</td>
+					<td><input type="text" name="input9" value="1"></td>
+				</tr>
+				<tr>
+					<td style="text-align: right;">最大值:</td>
+					<td><input type="text" name="input10" value="10"></td>
+				</tr>
+				<tr>
+					<td style="text-align: right;">手机号:</td>
+					<td><input type="text" name="input11" value="12345"></td>
+				</tr>
+				<tr>
+					<td style="text-align: right;">远程校验:</td>
+					<td><input type="text" id="input12" name="input12"></td>
+				</tr>
+				<tr>
+					<td style="text-align: right;">单选:</td>
+					<td><input type="radio" name="input13"><input type="radio" name="input13"></td>
+				</tr>
+				<tr>
+					<td style="text-align: right;">复选:</td>
+					<td><input type="checkbox" name="input14"><input type="checkbox" name="input14"><input type="checkbox" name="input14"></td>
+				</tr>
+				<tr>
+					<td style="text-align: right;">下拉框:</td>
+					<td>
+						<select name="input15" style="100px;">
+							<option value="">请选择</option>
+							<option value="aaa">aaa</option>
+							<option value="bbb">bbb</option>
+							<option value="ccc">ccc</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<br/>
+			<input type="submit" value="提交">
+		</form>
+	</div>
+</body>
+</html>
